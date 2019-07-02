@@ -95,8 +95,6 @@ public class RestTestController {
 
 //		log.info("수는"+li1.compareTo(a, b));
 
-
-
     }
 
 }
