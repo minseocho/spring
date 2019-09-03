@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<link rel="stylesheet" href="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/css/style.css" />
+<script src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/js/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/css/main.css" />
+<link rel="stylesheet" href="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/css/premium.css" />
+<div class="brand_content">
+	<div class="min_inner">
+		<div class="brand_contents-inner">
+			<!--리스트 1개 타입-->
+			<div class="product_set">
+				<div class="list_set1">
+					<a href="#none">
+						<div class="img_wrap">
+							<!-- <img src="../assets/img/premium/dummy/brandex_list1.jpg" alt=""> -->
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/brandex_list1.jpg" alt="">
+						</div>
+						<div class="txt_box">
+							<div class="txt_box_inner">
+								<h3 class="section_title"><span th:text="${content.subject}"></span></h3>
+								<p class="desc">1946년, 몽테뉴가 30번지에서 디올의 아이덴티티가 탄생했습니다. 디올
+									하우스의 상징적 주소인 30 Montaigne는 이번 시즌 마리아 그라치아 치우리가 선보이는 새로운 컬렉션의
+									이름으로 부여되었습니다.</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--//리스트 1개 타입-->
+			<!--리스트 2개 타입-->
+			<div class="product_set">
+				<h3 class="section_title">CONTENTS OF THE DIOR</h3>
+				<ul class="product_list-col2 list_set2">
+					<li class="item"><a href="#none"> <!-- <img
+							src="../assets/img/premium/dummy/contentof01.jpg" alt=""> -->
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/contentof01.jpg" alt="">
+							<div class="txt_box">
+								<p class="t_title"><span th:text="${content2.subject}"></span></p>
+								<p class="desc">겨우 23세의 나이로 피카소, 달리, 자코메티, 베라르, 클리, 칼더 등 수많은
+									대가의 작품을 전시했습니다.</p>
+							</div>
+					</a></li>
+					<li class="item"><a href="#none"> <img
+							src="../assets/img/premium/dummy/contentof01.jpg" alt="">
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/contentof01.jpg" alt="">
+							<div class="txt_box">
+								<p class="t_title">시간의 흐름</p>
+								<p class="desc">1946년, 몽테뉴가 30번지에서 디올의 아이덴티티가 탄생했습니다. 디올
+									하우스의 상징적 주소인 30 Montaigne는 이번 시즌 마리아 그라치아 치우리가…</p>
+							</div>
+					</a></li>
+				</ul>
+			</div>
+			<!--//리스트 2개 타입-->
+			<!--리스트 3개 타입-->
+			<div class="product_set">
+				<h3 class="section_title">CONTENTS OF THE DIOR</h3>
+				<ul class="product_list-col3 list_set3">
+					<li class="item"><a href="#none"> <!-- <img
+							src="../assets/img/premium/dummy/contentof01.jpg" alt=""> -->
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/contentof01.jpg" alt="">
+							<div class="txt_box">
+								<p class="t_title">디올과 예술가 친구들</p>
+								<p class="desc">겨우 23세의 나이로 피카소, 달리, 자코메티, 베라르, 클리, 칼더 등 수많은
+									대가의 작품을 전시했습니다.</p>
+							</div>
+					</a></li>
+					<li class="item"><a href="#none"> <!-- <img
+							src="../assets/img/premium/dummy/contentof02.jpg" alt=""> -->
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/contentof02.jpg" alt="">
+							<div class="txt_box">
+								<p class="t_title">
+									30 MONTAIGNE <br>마리아 그라치아 치우리
+								</p>
+								<p class="desc">가장 전통적인 수공 작업 방식으로 이탈리아에서 제작된 Dior Men 백은
+									정교한 디자인과 현대적인 우아함을 겸비했습니다.</p>
+							</div>
+					</a></li>
+					<li class="item"><a href="#none"> <!-- <img
+							src="../assets/img/premium/dummy/contentof03.jpg" alt=""> -->
+							<img src="http://elltpm.static.lotteeps.com.s3-ap-northeast-2.amazonaws.com/front/desktop/assets/img/premium/dummy/contentof03.jpg" alt="">
+							<div class="txt_box">
+								<p class="t_title">
+									한국현대미술로 만나는 <br>디올의 오뜨꾸뛰르
+								</p>
+								<p class="desc">디올은 10년에 걸쳐 매 시즌마다 현대 복식사를 다시 쓰게 할 만큼 새로운
+									라인을 선보였고 전 세계적으로 인정받는 독자적인 스타일을 창조하였습니다.</p>
+							</div>
+					</a></li>
+				</ul>
+			</div>
+			<!--//리스트 3개 타입-->
+
+		</div>
+	</div>
+</div>
+<div class="brand_product">
+	<div class="min_inner">
+		<h3 class="section_title">BEST SELLING</h3>
+		<div class="product_set">
+			<ul class="product_list-col5">
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+				<li class="item"><a href="#">
+						<div class="figure">
+							<p class="photo">
+								<img src="https://dummyimage.com/294x294/ccc/000" alt="대체 텍스트">
+							</p>
+						</div>
+						<div class="info">
+							<p class="seller">판매자/브랜드</p>
+							<p class="title">제품명 제품명제품명제품명제품명제품명제품명제품명제품명</p>
+							<p class="price">
+								<!-- <del>99,000</del> -->
+								<ins>
+									77,220<span class="unit">원</span>
+								</ins>
+							</p>
+						</div>
+				</a></li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+</html>
