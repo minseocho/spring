@@ -3,7 +3,10 @@ package springbootgi.springbootai;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,20 +20,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import springbootgi.springbootai.model.ApiResponseMessage;
 import springbootgi.springbootai.model.Novel;
 
 @RestController
+@Api(value = "RestTestController", description = "헬로 에이피아이")
 public class RestTestController {
 
 	// http://localhost:8081/
+	// http://localhost:8081/swagger-ui.html
 
 	private static final Logger log = LoggerFactory.getLogger(RestTestController.class);
 
 	private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-	@RequestMapping("/restTest")
+	@RequestMapping(value="/restTest", method=RequestMethod.GET)
+	@ApiOperation(value="rest API 테스트", notes="rest API 테스트 확인용")
 	public Greeting restTest(@RequestParam(value="name", defaultValue="World") String name) {
 
 //		LambdaInterface li1 = (String s1, String s2, String s3) -> {
@@ -42,7 +50,8 @@ public class RestTestController {
                             String.format(template, name));
     }
 
-	@RequestMapping("/paramTest")
+	@RequestMapping(value="/paramTest", method=RequestMethod.GET)
+	@ApiOperation(value="파라미터 테스트", notes="라파미터 테스트 확인용")
 	public int paramTest(@RequestParam(value="a") int a, @RequestParam(value="b") int b) {
 
 		log.info("a : "+ a);
@@ -53,6 +62,7 @@ public class RestTestController {
     }
 
 	@RequestMapping(value="/lambdaTest", method= RequestMethod.GET)
+	@ApiOperation(value="람다 테스트", notes="람다 테스트 확인용")
 	public ResponseEntity<ApiResponseMessage> lambdaTest() {
 		// https://coding-factory.tistory.com/265
 		/**
@@ -98,7 +108,7 @@ public class RestTestController {
 	    .max()
 	    .ifPresent(name -> log.info("최고값:"+name));  // 3
 
-		ApiResponseMessage message = new ApiResponseMessage("Success", "Hello, World", "", "");
+		ApiResponseMessage message = new ApiResponseMessage("Success", "Hello, World", "", "", "");
 
 		return new ResponseEntity<ApiResponseMessage>(message, HttpStatus.OK);
 
@@ -109,7 +119,8 @@ public class RestTestController {
 	 * 데이터소스를 추상화하였다는 것은, 데이터 소스가 무엇이든 같은 방식으로 다룰 수 있게 되었다는 것과
 	 * 코드의 재사용성이 높아진다는 것을 의미한다.
 	 */
-	@RequestMapping("/streamTest")
+	@RequestMapping(value="/streamTest", method=RequestMethod.GET)
+	@ApiOperation(value="스트림 테스트", notes="스트림 테스트 확인용")
 	public void streamTest() {
 
 		//Stream 사용 전
@@ -138,26 +149,93 @@ public class RestTestController {
 
     }
 
-	@RequestMapping("/listTest")
-	public List<Novel> listTest() {
-		// TODO ResponseEntity
-		// TODO ResultMessage
-		// TODO 서버 재시작 없이 동적 적용하기
-		List<Novel> strList = new ArrayList<>();
+	/**
+	 * https://cwondev.tistory.com/15
+	 * https://manorgass.tistory.com/60
+	 * list 정렬 테스트
+	 * 모델 정렬
+	 */
+	@RequestMapping(value="/listTest", method=RequestMethod.GET)
+	@ApiOperation(value="리스트 sort 테스트", notes="리스트 sort 테스트 확인용")
+	public ArrayList<Novel> listTest() {
+		ArrayList<Novel> strList = new ArrayList<>();
 
-		Novel novel1 = new Novel();
-		novel1.setSubject("SPARK OF LIFE");
-		novel1.setWriter("ERICH MARIA");
+		Novel novel1 = new Novel("SPARK OF LIFE", "ERICH MARIA");
 		strList.add(novel1);
 
 		// Rich Man, Poor Man
 		// IRWIN SHAW
-		Novel novel2 = new Novel();
-		novel2.setSubject("Rich Man, Poor Man");
-		novel2.setWriter("IRWIN SHAW");
+		Novel novel2 = new Novel("Rich Man, Poor Man", "IRWIN SHAW");
 		strList.add(novel2);
 
+		Novel novel3 = new Novel("Aich Man, Poor Man", "ERWIN SHAW");
+		strList.add(novel3);
+
+		Novel novel4 = new Novel("Cich Man, Poor Man", "HRWIN SHAW");
+		strList.add(novel4);
+
+		Collections.sort(strList);
+
+		for(int i=0; i<strList.size(); i++){
+			log.info(strList.get(i).getSubject());
+		}
+
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(4);
+		list.add(6);
+		list.add(2);
+		list.add(5);
+
+		log.info("정렬 전  : " + list.toString());
+		list.sort(Comparator.naturalOrder());
+		log.info("오름차순 : " + list.toString());
+		list.sort(Comparator.reverseOrder());
+		log.info("내림차순 : " + list.toString());
+
+
+
 		return strList;
+	}
+
+
+	/**
+	 * https://nota.tistory.com/49
+	 * 형변환 테스트
+	 */
+	@RequestMapping(value="/castTest", method=RequestMethod.GET)
+	@ApiOperation(value="형변환 테스트", notes="형변환 테스트 확인용")
+	public Map<String, Object> castTest() {
+
+		Map<String, Object> param = new HashMap<>();
+
+		String str = "345";
+
+		param.put("String", Integer.parseInt(str));
+
+		int nmb = 123;
+
+		param.put("int", Integer.toString(nmb));
+
+		log.info("param : {}", param);
+
+		return param;
+	}
+
+	/**
+	 * https://steemit.com/kr-dev/@igna84/spring-boot-responseentity
+	 * ResponseEity 테스트
+	 */
+	@RequestMapping(value="/respTest", method=RequestMethod.GET)
+	@ApiOperation(value="ResponseEity 테스트", notes="ResponseEity 테스트 확인용")
+	public ResponseEntity<ApiResponseMessage> responseEntityTest(@RequestParam(value="number1") int number1,
+																 @RequestParam(value="number2") int number2) {
+
+		ApiResponseMessage message = new ApiResponseMessage("Success", "Hello, World", number1 + number2, "", "");
+
+		log.info("message : {}", message);
+
+		return new ResponseEntity<ApiResponseMessage>(message, HttpStatus.OK);
 	}
 
 }
